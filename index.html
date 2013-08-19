@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Devday 2013 Quiz</title>
+
+  
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/index.css">
+  <style type="text/css">
+	  @font-face {
+		font-family: 'open_sansregular';
+		src: url('fonts/opensans-regular-webfont.eot');
+		src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('fonts/opensans-regular-webfont.woff') format('woff'),
+			 url('fonts/opensans-regular-webfont.ttf') format('truetype'),
+			 url('fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+  </style>
+
+  <script src="js/vendor/custom.modernizr.js"></script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/jQuiz.js"></script>
+</head>
+<body>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h2>
+				<a id="logo" href="http://devday.pl/">
+					<img src="img/logo2013.png" alt="DevDay logo" />
+				</a>
+			</h2>
+			<h2>Quiz</h2>
+			<hr />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-8 columns">
+			<div class="row intro">
+				<div class="large-12 columns">
+					<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor?
+					</p>
+					<p>Leave your nickname, so we can know who to reward:)</p>
+				</div>
+			</div>
+			<div class="row intro">
+				<div class="large-6 small-8 columns">
+					<input type="text" placeholder="Nick" />
+				</div>
+				<div class="large-12 columns">
+				  <p><a href="#" class="small button intro">Start Quiz</a></p>
+				</div>
+			</div>
+			 <div class="questionContainer hide radius first">
+        <div class="question"><b>Question 1:</b> Inside which HTML element do we put the JavaScript?</div>
+        <div class="answers">
+            <ul>
+                <li>
+                    <label><input type="radio" name="q1" id="q1-a" />&lt;js&gt;</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q1" id="q1-b" />&lt;script&gt;</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q1" id="q1-c" />&lt;scripting&gt;</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q1" id="q1-d" />&lt;javascript&gt;</label>
+                </li>
+            </ul>
+        </div>
+        <div class="btnContainer">
+                <div class="prev"></div>
+                <div class="next">
+                    <a class="btnNext small button">Next &gt;&gt;</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+    </div>
+    <div class="questionContainer hide radius">
+        <div class="question"><b>Question 2:</b> What is the correct JavaScript syntax to write "Hello World"?</div>
+        <div class="answers">
+            <ul>
+                <li>
+                    <label><input type="radio" name="q2" id="q2-a" />response.write("Hello World")</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q2" id="q2-b" />("Hello World")</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q2" id="q2-c" />"Hello World"</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q2" id="q2-d" />document.write("Hello World")</label>
+                </li>
+            </ul>
+        </div>
+        <div class="btnContainer">
+                <div class="prev">
+                    <a class="btnPrev small button">&lt;&lt; Prev</a>
+                </div>
+                <div class="next">
+                    <a class="btnNext small button">Next &gt;&gt;</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+    </div>
+    <div class="questionContainer radius hide">
+        <div class="question"><b>Question 3:</b> Where is the correct place to insert a JavaScript?</div>
+        <div class="answers">
+            <ul>
+                <li>
+                    <label><input type="radio" name="q3" id="q3-a" />Both the &lt;thead&gt; section and the &lt;body&gt; section are correct</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q3" id="q3-b" />The &lt;body&gt; section</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q3" id="q3-c" />The &lt;head&gt; section</label>
+                </li>
+            </ul>
+        </div>
+        <div class="btnContainer">
+                <div class="prev">
+                    <a class="btnPrev small button">&lt;&lt; Prev</a>
+                </div>
+                <div class="next">
+                    <a class="btnNext small button">Next &gt;&gt;</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+    </div>
+    <div class="questionContainer radius hide">
+        <div class="question"><b>Question 4:</b> What is the correct syntax for referring to an external script called "xxx.js"?</div>
+        <div class="answers">
+            <ul>
+                <li>
+                    <label><input type="radio" name="q4" id="q4-a" />&lt;script type="text/javascript" name="xxx.js"&gt;</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q4" id="q4-b" />&lt;script type="text/javascript" href="xxx.js"&gt;</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q4" id="q4-c" />&lt;script type="text/javascript" src="xxx.js"&gt;</label>
+                </li>
+            </ul>
+        </div>
+        <div class="btnContainer">
+                <div class="prev">
+                    <a class="btnPrev small button">&lt;&lt; Prev</a>
+                </div>
+                <div class="next">
+                    <a class="btnNext small button">Next &gt;&gt;</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+    </div>
+    <div class="questionContainer radius hide last">
+        <div class="question"><b>Question 5:</b> The external JavaScript file must contain the &lt;script&gt; tag?</div>
+        <div class="answers">
+            <ul>
+                <li>
+                    <label><input type="radio" name="q5" id="q5-a" />True</label>
+                </li>
+                <li>
+                    <label><input type="radio" name="q5" id="q5-b" />False</label>
+                </li>
+            </ul>
+        </div>
+        <div class="btnContainer">
+            <div class="prev">
+                <a class="btnPrev small button">&lt;&lt; Prev</a>
+            </div>
+            <div class="next">
+                <a class="btnShowResult small success button">Finish!</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div id="resultKeeper" class="radius hide"></div>
+		</div>
+	</div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="js/foundation.min.js"></script>
+  <!--
+  
+  <script src="js/foundation/foundation.js"></script>
+  
+  <script src="js/foundation/foundation.alerts.js"></script>
+  
+  <script src="js/foundation/foundation.clearing.js"></script>
+  
+  <script src="js/foundation/foundation.cookie.js"></script>
+  
+  <script src="js/foundation/foundation.dropdown.js"></script>
+  
+  <script src="js/foundation/foundation.forms.js"></script>
+  
+  <script src="js/foundation/foundation.joyride.js"></script>
+  
+  <script src="js/foundation/foundation.magellan.js"></script>
+  
+  <script src="js/foundation/foundation.orbit.js"></script>
+  
+  <script src="js/foundation/foundation.reveal.js"></script>
+  
+  <script src="js/foundation/foundation.section.js"></script>
+  
+  <script src="js/foundation/foundation.tooltips.js"></script>
+  
+  <script src="js/foundation/foundation.topbar.js"></script>
+  
+  <script src="js/foundation/foundation.interchange.js"></script>
+  
+  <script src="js/foundation/foundation.placeholder.js"></script>
+  
+  <script src="js/foundation/foundation.abide.js"></script>
+  
+  -->
+  
+  <script>
+    $(document).foundation();
+	  $('.button.intro').click(function(){
+		$('.intro').fadeOut(500);
+		$('.questionContainer.first').fadeIn(500);
+	  })
+  </script>
+</body>
+</html>
