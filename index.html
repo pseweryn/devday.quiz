@@ -32,11 +32,9 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<h2>
-				<a id="logo" href="http://devday.pl/">
-					<img src="img/logo2013.png" alt="DevDay logo" />
-				</a>
+				<a id="logo" href="http://devday.pl/"><img src="img/logo2013.png" alt="DevDay logo" /></a>
 			</h2>
-			<h2>Quiz</h2>
+			<h3>Quiz</h3>
 			<hr />
 		</div>
 	</div>
@@ -48,144 +46,144 @@
 					<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor?
 					</p>
-					<p>Leave your nickname, so we can know who to reward:)</p>
+					<p class="smallText">Leave your nickname, so we can know who to reward:)</p>
 				</div>
 			</div>
 			<div class="row intro">
 				<div class="large-6 small-8 columns">
-					<input type="text" placeholder="Nick" />
+					<input type="text" placeholder="Nick" class="radius"/>
 				</div>
 				<div class="large-12 columns">
-				  <p><a href="#" class="small button intro">Start Quiz</a></p>
+				  <p><a href="#" class="small button intro">START QUIZ</a></p>
 				</div>
 			</div>
-			 <div class="questionContainer hide radius first">
+			 <div class="questionContainer hide first">
         <div class="question"><b>Question 1:</b> Inside which HTML element do we put the JavaScript?</div>
         <div class="answers">
             <ul>
                 <li>
-                    <label><input type="radio" name="q1" id="q1-a" />&lt;js&gt;</label>
+                    <label for="q1-a" class="radioLabel">&lt;js&gt;</label><span class="radioSpan"></span><input type="radio" name="q1" id="q1-a" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q1" id="q1-b" />&lt;script&gt;</label>
+                    <label for="q1-b" class="radioLabel">&lt;script&gt;</label><span class="radioSpan"></span><input type="radio" name="q1" id="q1-b" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q1" id="q1-c" />&lt;scripting&gt;</label>
+                    <label for="q1-c" class="radioLabel">&lt;scripting&gt;</label><span class="radioSpan"></span><input type="radio" name="q1" id="q1-c" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q1" id="q1-d" />&lt;javascript&gt;</label>
+                    <label for="q1-d" class="radioLabel">&lt;javascript&gt;</label><span class="radioSpan"></span><input type="radio" name="q1" id="q1-d" /><span class="radioSpan"></span>
                 </li>
             </ul>
         </div>
         <div class="btnContainer">
                 <div class="prev"></div>
                 <div class="next">
-                    <a class="btnNext small button">Next &gt;&gt;</a>
+                    <a class="btnNext small button">NEXT</a>
                 </div>
                 <div class="clear"></div>
             </div>
     </div>
-    <div class="questionContainer hide radius">
+    <div class="questionContainer hide">
         <div class="question"><b>Question 2:</b> What is the correct JavaScript syntax to write "Hello World"?</div>
         <div class="answers">
             <ul>
                 <li>
-                    <label><input type="radio" name="q2" id="q2-a" />response.write("Hello World")</label>
+				   <label for="q2-a" class="radioLabel">response.write("Hello World")</label><span class="radioSpan"></span><input type="radio" name="q2" id="q2-a" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q2" id="q2-b" />("Hello World")</label>
+	               <label for="q2-b" class="radioLabel">("Hello World")</label><span class="radioSpan"></span><input type="radio" name="q2" id="q2-b" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q2" id="q2-c" />"Hello World"</label>
+	               <label for="q2-c" class="radioLabel">"Hello World"</label><span class="radioSpan"></span><input type="radio" name="q2" id="q2-c" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q2" id="q2-d" />document.write("Hello World")</label>
+				   <label for="q2-d" class="radioLabel">document.write("Hello World")</label><span class="radioSpan"></span><input type="radio" name="q2" id="q2-d" /><span class="radioSpan"></span>
                 </li>
             </ul>
         </div>
         <div class="btnContainer">
                 <div class="prev">
-                    <a class="btnPrev small button">&lt;&lt; Prev</a>
+                    <a class="btnPrev small button">PREV</a>
                 </div>
                 <div class="next">
-                    <a class="btnNext small button">Next &gt;&gt;</a>
+                    <a class="btnNext small button">NEXT</a>
                 </div>
                 <div class="clear"></div>
             </div>
     </div>
-    <div class="questionContainer radius hide">
+    <div class="questionContainer hide">
         <div class="question"><b>Question 3:</b> Where is the correct place to insert a JavaScript?</div>
         <div class="answers">
             <ul>
                 <li>
-                    <label><input type="radio" name="q3" id="q3-a" />Both the &lt;thead&gt; section and the &lt;body&gt; section are correct</label>
+				   <label for="q3-a" class="radioLabel">Both the &lt;thead&gt; section and the &lt;body&gt; section are correct</label><span class="radioSpan"></span><input type="radio" name="q3" id="q3-a" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q3" id="q3-b" />The &lt;body&gt; section</label>
+					<label for="q3-b" class="radioLabel">The &lt;body&gt; section</label><span class="radioSpan"></span><input type="radio" name="q3" id="q3-b" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q3" id="q3-c" />The &lt;head&gt; section</label>
+	               <label for="q3-c" class="radioLabel">The &lt;head&gt; section</label><span class="radioSpan"></span><input type="radio" name="q3" id="q3-c" /><span class="radioSpan"></span>
                 </li>
             </ul>
         </div>
         <div class="btnContainer">
                 <div class="prev">
-                    <a class="btnPrev small button">&lt;&lt; Prev</a>
+                    <a class="btnPrev small button">PREV</a>
                 </div>
                 <div class="next">
-                    <a class="btnNext small button">Next &gt;&gt;</a>
+                    <a class="btnNext small button">NEXT</a>
                 </div>
                 <div class="clear"></div>
             </div>
     </div>
-    <div class="questionContainer radius hide">
+    <div class="questionContainer hide">
         <div class="question"><b>Question 4:</b> What is the correct syntax for referring to an external script called "xxx.js"?</div>
         <div class="answers">
             <ul>
                 <li>
-                    <label><input type="radio" name="q4" id="q4-a" />&lt;script type="text/javascript" name="xxx.js"&gt;</label>
+				   <label for="q4-a" class="radioLabel">&lt;script type="text/javascript" name="xxx.js"&gt;</label><span class="radioSpan"></span><input type="radio" name="q4" id="q4-a" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q4" id="q4-b" />&lt;script type="text/javascript" href="xxx.js"&gt;</label>
+					<label for="q4-b" class="radioLabel">&lt;script type="text/javascript" href="xxx.js"&gt;</label><span class="radioSpan"></span><input type="radio" name="q4" id="q4-b" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q4" id="q4-c" />&lt;script type="text/javascript" src="xxx.js"&gt;</label>
+	               <label for="q4-c" class="radioLabel">&lt;script type="text/javascript" src="xxx.js"&gt;</label><span class="radioSpan"></span><input type="radio" name="q4" id="q4-c" /><span class="radioSpan"></span>
                 </li>
             </ul>
         </div>
         <div class="btnContainer">
                 <div class="prev">
-                    <a class="btnPrev small button">&lt;&lt; Prev</a>
+                    <a class="btnPrev small button">PREV</a>
                 </div>
                 <div class="next">
-                    <a class="btnNext small button">Next &gt;&gt;</a>
+                    <a class="btnNext small button">NEXT</a>
                 </div>
                 <div class="clear"></div>
             </div>
     </div>
-    <div class="questionContainer radius hide last">
+    <div class="questionContainer hide last">
         <div class="question"><b>Question 5:</b> The external JavaScript file must contain the &lt;script&gt; tag?</div>
         <div class="answers">
             <ul>
                 <li>
-                    <label><input type="radio" name="q5" id="q5-a" />True</label>
+				   <label for="q5-a" class="radioLabel">True</label><span class="radioSpan"></span><input type="radio" name="q5" id="q5-a" /><span class="radioSpan"></span>
                 </li>
                 <li>
-                    <label><input type="radio" name="q5" id="q5-b" />False</label>
+				   <label for="q5-b" class="radioLabel">False</label><span class="radioSpan"></span><input type="radio" name="q5" id="q5-b" /><span class="radioSpan"></span>
                 </li>
             </ul>
         </div>
         <div class="btnContainer">
             <div class="prev">
-                <a class="btnPrev small button">&lt;&lt; Prev</a>
+                <a class="btnPrev small button">PREV</a>
             </div>
             <div class="next">
-                <a class="btnShowResult small success button">Finish!</a>
+                <a class="btnShowResult small success button">FINISH!</a>
             </div>
             <div class="clear"></div>
         </div>
     </div>
-    <div id="resultKeeper" class="radius hide"></div>
+    <div id="resultKeeper" class="hide"></div>
 		</div>
 	</div>
 

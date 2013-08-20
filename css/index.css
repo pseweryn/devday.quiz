@@ -1,23 +1,31 @@
 .questionContainer {
     padding: 3px;
     margin: 10px;
+	position: relative;
 }
+
+.question {
+    padding-bottom: 10px;
+	position: relative;
+}
+
 ul {
     margin: 0px;
     padding: 5px;
 }
 ul li {
     list-style: none;
+	padding-bottom: 5px;
 }
 .btnContainer {
     width: 96%;
     margin: 10px 0px 10px 2%;
 }
 .radius {
-    border-radius: 6px;
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -o-border-radius: 6px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 #resultKeeper {
     margin: 10px;
@@ -33,3 +41,59 @@ ul li {
 .next, .btnShowResult { float: right; }
 .clear { clear: both; }
 .hide { display: none; }
+
+label.radioLabel{
+	display: inline-block;
+	padding-left: 20px;
+}
+
+.smallText{
+	font-size: small;
+	color: #AAA;
+	margin-bottom: 0px; 
+}
+span.radioSpan{
+	position: absolute;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #AAA;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+ 
+span.radioSpan:after{
+}
+ 
+input[type="radio"]{
+	position: absolute;
+	left: 0;
+	margin: 0;
+	width: 31px;
+	height: 31px;
+	/*hide the radio button*/
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+        cursor: pointer;
+}
+ 
+input[type="radio"] + span{ /*the span element that immediately follow the radio button */
+	visibility: hidden;
+	background: #75C044;
+	border: 1px solid #75C044;
+}
+ 
+input[type="radio"] + span.radioSpan:after{
+}
+ 
+ 
+input[type="radio"]:checked + span{
+	visibility: visible;
+}
