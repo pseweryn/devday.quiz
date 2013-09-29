@@ -236,6 +236,11 @@ ul.acc-custom ul.acc-nested > li:last-child {
 
 .normal {
     font-weight: normal;
+    font-size: 100%;
+}
+
+.normalSize {
+    font-size: 100%;
 }
 
 .grey-bground {
