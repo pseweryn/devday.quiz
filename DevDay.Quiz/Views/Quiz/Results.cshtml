@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DevDay.Quiz.Models.Participant>
+
+<div class="row">
+    <div class="large-8 columns">
+        <div class="large-12 columns">
+           @{
+                ViewBag.Title = "Quiz Results";
+            }
+            <hgroup class="title">
+                <h2>@ViewBag.Title</h2>
+            </hgroup>
+            
+            <table class="results">
+                <tr class="head-row">
+                    <th class="nick-col">
+                        @Html.DisplayNameFor(model => model.Nick)
+                    </th>
+                    <th class="scores-col">
+                        @Html.DisplayNameFor(model => model.CorrectAnswerCount)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="nick-col">
+                            @Html.DisplayFor(modelItem => item.Nick)
+                        </td>
+                        <td class="scores-col">
+                            @Html.DisplayFor(modelItem => item.CorrectAnswerCount)
+                        </td>
+                    </tr>
+                }
+
+            </table>                    
+        </div>
+    </div>
+</div>

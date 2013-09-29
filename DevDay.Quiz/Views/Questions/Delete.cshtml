@@ -1,0 +1,49 @@
+﻿@model DevDay.Quiz.Models.Question
+
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	        
+            @{
+                ViewBag.Title = "Delete Question";
+            }
+
+            <h2>Delete</h2>
+
+            <h3>Are you sure you want to delete this?</h3>
+            <fieldset class="radius grey-bground">
+                <legend>Question</legend>
+
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Text)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Text)
+                </div>
+
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.SortOrder)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.SortOrder)
+                </div>
+
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Path)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Path)
+                </div>
+            </fieldset>
+            @using (Html.BeginForm()) {
+                @Html.AntiForgeryToken()
+                <p>
+                    <input type="submit" class="small button" value="Delete" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            }
+	    </div>
+	</div>
+</div>
+
+

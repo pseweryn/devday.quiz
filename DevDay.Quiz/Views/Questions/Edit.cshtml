@@ -1,0 +1,94 @@
+﻿@model DevDay.Quiz.Models.Question
+
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	        
+        @{
+            ViewBag.Title = "Edit Question";
+        }
+
+        <h2>Edit</h2>
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset class="radius dark-grey-bground">
+                <legend>Question</legend>
+
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Text)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Text, new { @class = "radius" })
+                    @Html.ValidationMessageFor(model => model.Text)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SortOrder)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.SortOrder, new { @class = "radius" })
+                    @Html.ValidationMessageFor(model => model.SortOrder)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Path)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Path, new { @class = "radius" })
+                    @Html.ValidationMessageFor(model => model.Path)
+                </div>
+
+                <p>
+                    <input type="submit" class="small button" value="Save" />
+                </p>
+            </fieldset>
+        }
+            
+	        <fieldset class="radius dark-grey-bground">
+	        <legend>Answers</legend>
+            <p>
+                @Html.ActionLink("Add Answer", "Create", "Answers", null, new {@class = "small button"})
+            </p>
+	            @foreach (var answer in Model.Answers)
+	            {
+	                string weight = null;
+	                if (!answer.Correct)
+	                {
+	                    weight = "normal";
+	                }
+	                <div class="accordion">
+	                    <h4 class="radius @weight grey-bground">@Html.Raw(answer.Text)</h4>
+	                    <div class="acc-content radius grey-bground">
+	                        <div class="display-label">
+	                            @Html.DisplayNameFor(a => answer.SortOrder) : @Html.DisplayFor(a => answer.SortOrder)
+	                        </div>
+	                        <div class="display-label">
+	                            @Html.DisplayNameFor(a => answer.Correct) : @answer.Correct
+	                        </div>
+	                        <div class="display-field">
+	                            @Html.ActionLink("Edit", "Edit", "Answers", new { id=answer.Id }, null) 
+	                            |
+	                            @Html.ActionLink("Delete", "Delete", "Answers", new { id=answer.Id }, null)
+	                        </div>
+	                    </div>
+	                </div>
+                }
+            </fieldset>
+
+	        <div>
+	            @Html.ActionLink("Back to List", "Index")
+	        </div>
+
+	    </div>
+	</div>
+</div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

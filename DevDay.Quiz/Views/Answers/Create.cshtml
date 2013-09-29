@@ -1,0 +1,69 @@
+﻿@model DevDay.Quiz.Models.Answer
+
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	  @{
+            ViewBag.Title = "Create Answer";
+        }
+
+        <h2>Create</h2>
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <fieldset class="radius grey-bground">
+                <legend>Answer</legend>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.QuestionId, "Question")
+                </div>
+                <div class="editor-field">
+                    @Html.DropDownList("QuestionId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.QuestionId)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Text)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Text, new { @class="radius" })
+                    @Html.ValidationMessageFor(model => model.Text)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SortOrder)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.SortOrder, new { @class="radius" })
+                    @Html.ValidationMessageFor(model => model.SortOrder)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Correct)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Correct)
+                    @Html.ValidationMessageFor(model => model.Correct)
+                </div>
+
+                <p>
+                    <input type="submit" class="small button" value="Create" />
+                </p>
+            </fieldset>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+            |
+            @Html.ActionLink("Back to Questions", "Index", "Questions")
+        </div>      
+
+	    </div>
+	</div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

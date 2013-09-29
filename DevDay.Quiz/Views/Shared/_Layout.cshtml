@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>DevDay Quiz</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+       
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic|PT+Serif:400,400italic" rel="stylesheet">
+
+        @Styles.Render("~/Content/foundation.css")
+        @Styles.Render("~/Content/quiz.css")
+        @Styles.Render("~/Content/themes/base/css")
+        
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/quiz")
+    </head>
+    <body>
+        <header>
+            <div class="row">
+                <div class="large-8 columns">
+                    <div class="large-8 small-8 columns logo">
+                        <h2>
+                            <a id="logo" href="http://devday.pl/"><img src="~/Images/logo2013.png" alt="DevDay logo" /></a>
+                        </h2>
+                    </div>
+                    <div class="large-4 small-4 columns">
+                        <a href="#" class="menu-icon"></a>
+                    </div>
+                    <div class="small-12 large-12 columns">
+                        <nav class="top-menu">
+                            <ul>
+                                <li>
+                                    @Html.ActionLink("Quiz", "Index", "Quiz")
+                                </li>
+                                <li>
+                                    @Html.ActionLink("Results", "Results", "Quiz")
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="large-12 columns">
+                        <h3>Quiz</h3>
+                        <hr />
+                    </div>                          
+                </div>
+	        </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section>
+                @RenderBody()
+            </section>
+        </div>
+
+        @Scripts.Render("~/bundles/jqueryui")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

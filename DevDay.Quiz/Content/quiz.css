@@ -1,0 +1,283 @@
+﻿.questionContainer {
+    padding: 3px;
+    margin: 12px;
+	position: relative;
+}
+
+.question {
+    padding-bottom: 10px;
+	position: relative;
+}
+
+.answers {
+    position: relative;
+    margin-left: 5px;
+}
+
+ul {
+    margin: 0;
+    padding: 5px;
+}
+ul li {
+    list-style: none;
+	padding: 10px;
+}
+.btnContainer {
+    width: 96%;
+    margin: 10px 0 10px 2%;
+}
+.radius {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+#resultKeeper {
+    margin: 10px;
+    padding: 3px;
+}
+#resultKeeper div {
+    line-height: 20px;
+}
+.totalScore {
+    font-weight: bold;
+}
+.prev { float: left; }
+.next, .btnShowResult { float: right; }
+.clear { clear: both; }
+.hide { display: none; }
+.retry {float: left; margin-top: 10px;}
+
+label.radioLabel{
+	display: inline-block;
+	padding-left: 20px;
+    min-width: 300px;
+}
+
+.smallText{
+	font-size: small;
+	color: #AAA;
+	margin-bottom: 0px; 
+}
+span.radioSpan{
+	position: absolute;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	padding: 3px;
+	background: #FFF;
+	border: 1px solid #AAA;
+	-moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+ 
+span.radioSpan:after{
+}
+ 
+input[type="radio"]{
+	position: absolute;
+	left: 0;
+	margin: 0;
+	width: 31px;
+	height: 31px;
+	/*hide the radio button*/
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	-khtml-opacity: 0;
+	opacity: 0;
+    cursor: pointer;
+}
+ 
+input[type="radio"] + span{ /*the span element that immediately follow the radio button */
+	visibility: hidden;
+	background: #75C044;
+	border: 1px solid #75C044;
+}
+ 
+input[type="radio"] + span.radioSpan:after{
+}
+ 
+ 
+input[type="radio"]:checked + span{
+	visibility: visible;
+}
+
+.checked {
+    font-weight: bold
+}
+
+/* styles for validation helpers */
+
+.field-validation-error, .general-error {
+    color: #e80c4d;
+    font-weight: bold;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.nick-col {
+    width: 70%;
+}
+.scores-col {
+    width: 30%;
+}
+
+tr:nth-child(even){
+    background-color: #F8F8F8;
+}
+tr:nth-child(odd), .results .head-row {
+    background-color: #F0F0F0;
+}
+
+div.track-nav {
+    width: 100%;
+    display: none;
+}
+
+div.track-nav div {
+    width: 50%;
+    float: left;
+    margin: 10px 0 30px 0;
+    cursor: pointer;
+    position: relative;
+}
+div.track-nav .t1 {
+    background-color: #74C043;
+}
+div.track-nav .t2 {
+    background-color: #007DC0;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.accordion {
+    margin-top: 20px !important;
+}
+
+.accordion .acc-content, .accordion h4 {
+    border: 1px solid #DDDDDD !important;
+    margin: 1.125em 0;
+    padding: 1.25em;
+}
+
+.accordion h4 {
+    cursor: pointer;
+    padding: 2em;
+}
+
+.acc-icon {
+    width: 20px !important;
+    height: 20px !important;
+}
+.acc-collapsed {
+    background-image: url(../Images/arrow_right.png) !important;
+
+}
+.acc-expanded {
+    margin-left: -5px;
+    background-image: url(../Images/arrow_down.png) !important;
+}
+
+.display-field, .display-label {
+    margin-bottom: 10px;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+.grey-bground {
+    background-color:#F8F8F8;
+}
+.dark-grey-bground {
+    background-color: #F0F0F0;
+}
+
+.menu-icon {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background: url(../Images/menu.png);
+    background-size: 100%; /*TO DO: add fallback for IE*/
+    float: right;
+    margin-top: 5px;
+}
+
+nav {
+    margin-top: 5px;
+}
+
+nav ul{ 
+	display: none;
+	background: #444;
+	width: 100%;
+    z-index: 100;
+    padding: 0;
+}
+
+nav li {
+    border-bottom: 1px solid #fff;
+	text-align: left;
+	width: 100%;
+	padding: 10px;
+	margin: 0;
+}
+
+nav li a {
+    color: #fff;
+    display: block;
+}
+
+.logo {
+    margin-top: 5px;
+}
+
+.backLink {
+    padding-bottom: 20px;
+}
+
+.greenPointer {
+    background: url(../Images/arrow_down.png) no-repeat;
+    display: none;
+}
+
+.bluePointer {
+    background: url(../Images/dziubek_blue.png) no-repeat;
+    display: none;
+}
+
+.current span {
+    position: absolute;
+    top: 15px;
+    left: 45%;
+    display: inline;
+}

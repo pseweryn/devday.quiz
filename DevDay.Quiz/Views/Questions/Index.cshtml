@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DevDay.Quiz.Models.Question>
+
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	        
+            @{
+                ViewBag.Title = "Questions";
+            }
+
+            <h2>Questions</h2>
+
+	        <p>
+	            @Html.ActionLink("Create New", "Create", null, new {@class = "small button"})
+	        </p>
+
+            @foreach (var item in Model)
+	        {
+	            <div class="accordion">
+	                <h4 class="radius normal dark-grey-bground">@item.Text</h4>
+	                <div class="acc-content radius grey-bground">
+	                    <div class="display-label">
+	                        @Html.DisplayNameFor(i => i.Answers) : @item.Answers.Count
+	                    </div>	                    
+                        <div class="display-label">
+                            @Html.DisplayNameFor(i => i.SortOrder) : @item.SortOrder
+	                    </div>
+	                    <div class="display-label">
+	                        @Html.DisplayNameFor(i => i.Path) : @item.Path
+	                    </div>
+	                    <div class="display-field">
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
+                        |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+	                    </div>
+	                </div>
+	            </div>
+            }
+
+	    </div>
+	</div>
+</div>
+
+

@@ -1,0 +1,100 @@
+﻿@using DevDay.Quiz.Models
+@model IEnumerable<DevDay.Quiz.Models.Question>
+
+<div class="row">
+	    <div class="large-8 columns">
+	        <div class="large-12 columns intro">
+	            <div class="row">
+	                <div class="large-12 columns">
+	                    <p>
+	                        @ViewBag.Message
+	                    </p>
+	                    <p class="smallText">Leave your nickname, so we can know who to reward:)</p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="large-6 small-8 columns">
+	                    <input type="text" name="nick" class="radius"/>
+	                </div>
+	                <div class="large-12 columns">
+	                    <p><input type="submit" name="start" class="small button" disabled="disabled" value="Start"/></p>
+	                </div>
+	            </div>
+	        </div>
+ 
+            @for (int i = 1; i < Model.Count(); i++)
+            {
+                var rowNum = i;
+                var questions = Model.Where(q => q.SortOrder == rowNum);
+                
+                
+                string first = null;
+                if (rowNum == 1)
+                {
+                    first = "first";
+                }
+
+                string last = null;
+                string btnClass = "btnNext";
+                string btnTxt = "NEXT";
+                int maxOrder = Model.Max(q => q.SortOrder);
+                if (rowNum == maxOrder)
+                {
+                    last = "last";
+                    btnClass = "btnShowResult";
+                    btnTxt = "FINISH";
+                }
+                var qlist = questions as IList<Question> ?? questions.ToList();
+                <div class="questionContainer hide @first @last">
+	            <h3>@rowNum / @maxOrder</h3>
+                <hr />
+                    @if (qlist.Count() >= 2)
+                    {
+                        <div class="track-nav clear-fix">
+                            <p class="smallText">Click the tabs to switch to question from another track</p>
+                            <div class="t1"><span class="greenPointer acc-icon"></span><a href="#">&nbsp;</a></div>
+                            <div class="t2"><span class="bluePointer acc-icon"></span><a href="#">&nbsp;</a></div>                      
+                        </div>
+                    }
+
+                    @foreach (var item in qlist)
+                    {                    
+                        string track = null;
+                        string qtrackinfo = null;
+                        if (item.Path > 0)
+                        {
+                            track = "track-content t" + item.Path;
+                            qtrackinfo = "from Track " + item.Path;
+                        }
+                       <div class="@track">
+	                        <div class="question"><b>Question @rowNum @qtrackinfo:</b> @item.Text</div>
+	                            <div class="answers">
+	                                <ul>
+	                                    @foreach (var answer in item.Answers)
+	                                    {
+	                                        string qId = "q" + item.Id;
+                                            string aId = qId + "-" + answer.Id;
+	                                       <li>
+	                                            <label for="@aId" class="radioLabel">@Html.Raw(answer.Text)</label><span class="radioSpan"></span><input type="radio" name="@qId" id="@aId" /><span class="radioSpan"></span>
+	                                       </li>
+	                                    }
+	                                </ul>
+	                            </div>
+	                    </div>
+                    }
+                    <div class="btnContainer">
+	                        <div class="prev">
+	                            <a class="btnPrev small button">PREV</a>
+	                        </div>
+	                        <div class="next">
+	                            <a class="@btnClass small button">@btnTxt </a>
+	                        </div>
+	                        <div class="clear"></div>
+	                    </div>
+	                </div>
+            }
+
+	        <div id="resultKeeper" class="hide"></div>
+	    </div>
+</div>
+
