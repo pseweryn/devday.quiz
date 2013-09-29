@@ -1,12 +1,12 @@
-$(function() {
+$(function () {
 
     var Quiz = {
         init: function () {
-            $('.questionContainer').each(function() {
+            $('.questionContainer').each(function () {
                 $(this).find('.track-content :not(:first)').hide();
             });
-            
-            $('.track-nav div').click(function(event) {
+
+            $('.track-nav div').click(function (event) {
                 event.preventDefault();
                 $('.track-content').hide();
                 $('.track-nav .current').removeClass("current");
@@ -15,14 +15,14 @@ $(function() {
                 $(this).addClass('current');
             }).eq(0).addClass('current');
 
-            $('.btnNext').click(function() {
-                $(this).parents('.questionContainer').fadeOut(100, function() {
+            $('.btnNext').click(function () {
+                $(this).parents('.questionContainer').fadeOut(100, function () {
                     $(this).next().show("slide", { direction: "right" }, 500);
                 });
             });
 
-            $('.btnPrev').click(function() {
-                $(this).parents('.questionContainer').fadeOut(100, function() {
+            $('.btnPrev').click(function () {
+                $(this).parents('.questionContainer').fadeOut(100, function () {
                     $(this).prev().show("slide", { direction: "left" }, 500);
                 });
             });
@@ -41,7 +41,7 @@ $(function() {
                     data: quizData,
                     datatype: 'JSON',
                     contentType: 'application/json',
-                    success: function(result) {
+                    success: function (result) {
                         $('.questionContainer.last').hide();
                         var resultSet = '<div class="totalScore">' + result + '</div>' +
                             '<div>Now go ahead and check the <a href="/Quiz/Results">results</a></div>';
@@ -60,36 +60,60 @@ $(function() {
                 });
             });
 
-            $("input[name='start']").click(function() {
+            $("input[name='start']").click(function () {
                 $('.intro').hide();
                 $('.track-nav').show();
                 $('.questionContainer.first').show("slide", { direction: "right" }, 500);
             });
 
-            $("input[name='nick']").keyup(function() {
+            $("input[name='nick']").keyup(function () {
                 if ($(this).val()) {
                     $("input[name='start']").removeAttr('disabled');
                 } else {
                     $("input[name='start']").attr('disabled', 'disabled');
                 }
             });
-            $('input[type=radio]').change(function() {
+            $('input[type=radio]').change(function () {
                 if ($(this).is(':checked')) {
                     $(this).closest('ul').find('.radioLabel').removeClass('checked');
                     $(this).parent().find('.radioLabel').addClass('checked');
                 }
             });
-            
+
             $('.accordion').accordion({
-                header: 'h4',
+                header: 'h4:not(.nested)',
                 active: false,
                 collapsible: true,
+                //                heightStyle: "content",
                 icons: {
                     header: 'acc-icon acc-collapsed',
                     headerSelected: 'acc-icon acc-expanded'
                 }
             });
-            $('.menu-icon').click(function() {
+
+            $('.acc-custom > li ul')
+              .click(function (event) {
+                  event.stopPropagation();
+              })
+//              .filter(':not(:first)')
+              .hide();
+
+            $('.acc-custom > li, .acc-custom > li > ul > li').click(function () {
+                var selfClick = $(this).find('ul:first').is(':visible');
+                if (!selfClick) {
+                    $(this)
+                      .parent()
+                      .find('> li ul:visible')
+                      .slideToggle();
+                }
+
+                $(this)
+                  .find('ul:first')
+                  .stop(true, true)
+                  .slideToggle();
+            });
+
+            $('.menu-icon').click(function () {
                 $('nav ul').slideToggle();
             });
         }

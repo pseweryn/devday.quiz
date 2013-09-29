@@ -13,32 +13,56 @@
 	        <p>
 	            @Html.ActionLink("Create New", "Create", null, new {@class = "small button"})
 	        </p>
-
+	        <ul class="acc-custom">
             @foreach (var item in Model)
-	        {
-	            <div class="accordion">
-	                <h4 class="radius normal dark-grey-bground">@item.Text</h4>
-	                <div class="acc-content radius grey-bground">
-	                    <div class="display-label">
-	                        @Html.DisplayNameFor(i => i.Answers) : @item.Answers.Count
-	                    </div>	                    
-                        <div class="display-label">
-                            @Html.DisplayNameFor(i => i.SortOrder) : @item.SortOrder
-	                    </div>
-	                    <div class="display-label">
-	                        @Html.DisplayNameFor(i => i.Path) : @item.Path
-	                    </div>
-	                    <div class="display-field">
-                        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
-                        |
-                        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-	                    </div>
-	                </div>
-	            </div>
-            }
+            {
+                <li>
+                    <h4 class="radius normal dark-grey-bground">@item.Text</h4>
+                    <ul class="acc-nested radius dark-grey-bground">
+                        <li>
+                            <div class="acc-content radius grey-bground">                   
+                                <div class="display-label">
+                                    @Html.DisplayNameFor(i => i.SortOrder) : @item.SortOrder
+                                </div>
+                                <div class="display-label">
+                                    @Html.DisplayNameFor(i => i.Path) : @item.Path
+                                </div>
+                                <div class="display-field">
+                                    @Html.ActionLink("Edit", "Edit", new {id = item.Id}) 
+                                    |
+                                    @Html.ActionLink("Delete", "Delete", new {id = item.Id})
+                                </div>
+                            </div>
+                        </li>
 
+                        @foreach (var answer in item.Answers)
+                        {
+                            string font = !answer.Correct ? "normal" : "normalSize";
+                            <li>
+                                <h4 class="radius @font grey-bground nested">@Html.Raw(answer.Text)</h4>
+                                <ul>
+                                    <li>
+                                        <div class="acc-content radius grey-bground">
+                                            <div class="display-label">
+                                                Order : @answer.SortOrder
+                                            </div>
+                                            <div class="display-label">
+                                                Correct : @answer.Correct
+                                            </div>
+                                            <div class="display-field">
+                                                @Html.ActionLink("Edit", "Edit", new {id = answer.Id}) 
+                                                |
+                                                @Html.ActionLink("Delete", "Delete", new {id = answer.Id})
+                                            </div>
+                                        </div>   
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+	       </ul>
 	    </div>
 	</div>
 </div>
-
-

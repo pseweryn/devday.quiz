@@ -179,19 +179,42 @@ div.track-nav .t2 {
     visibility: hidden;
 }
 
-.accordion {
+.accordion, .acc-custom, .acc-nested {
     margin-top: 20px !important;
 }
 
-.accordion .acc-content, .accordion h4 {
+.accordion .acc-content, .accordion h4{
     border: 1px solid #DDDDDD !important;
     margin: 1.125em 0;
+    padding: 1.25em;
+}
+
+.acc-nested .acc-content, .acc-nested h4 {
+    border: 1px solid #DDDDDD !important;
+    padding: 1.25em;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.acc-custom .acc-content, .acc-custom h4 {
+    border: 1px solid #DDDDDD !important;
     padding: 1.25em;
 }
 
 .accordion h4 {
     cursor: pointer;
     padding: 2em;
+}
+
+.acc-nested h4, .acc-custom h4 {
+    cursor: pointer;
+}
+
+.acc-custom ul li {
+    padding: 0 10px 0 10px;
+}
+ul.acc-custom ul.acc-nested > li:last-child {
+    padding-bottom: 5px;
 }
 
 .acc-icon {
