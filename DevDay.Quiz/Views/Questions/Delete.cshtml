@@ -29,11 +29,12 @@
                 </div>
 
                 <div class="display-label">
-                     @Html.DisplayNameFor(model => model.Path)
+                     @Html.DisplayNameFor(model => model.Session.Title)
                 </div>
                 <div class="display-field">
-                    @Html.DisplayFor(model => model.Path)
+                    @Html.DisplayFor(model => model.Session.Title)
                 </div>
+
             </fieldset>
             @using (Html.BeginForm()) {
                 @Html.AntiForgeryToken()

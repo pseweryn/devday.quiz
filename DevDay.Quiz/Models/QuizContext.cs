@@ -14,7 +14,7 @@ namespace DevDay.Quiz.Models
 
         public DbSet<Question> Questions { get; set; }
         public DbSet<Answer> Answers { get; set; }
-
+        public DbSet<Session> Sessions { get; set; }
         public DbSet<Participant> Participants { get; set; }
     }
 }

@@ -36,11 +36,11 @@
                 </div>
 
                 <div class="editor-label">
-                    @Html.LabelFor(model => model.Path)
+                    @Html.LabelFor(model => model.SessionId, "Session")
                 </div>
                 <div class="editor-field">
-                    @Html.TextBoxFor(model => model.Path, new { @class = "radius" })
-                    @Html.ValidationMessageFor(model => model.Path)
+                    @Html.DropDownList("SessionId", String.Empty)
+                    @Html.ValidationMessageFor(model => model.SessionId)
                 </div>
 
                 <p>

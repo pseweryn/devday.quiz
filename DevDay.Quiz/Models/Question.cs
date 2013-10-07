@@ -16,8 +16,7 @@ namespace DevDay.Quiz.Models
         public virtual ICollection<Answer> Answers { get; set; }
         [Display(Name = "Order")]
         public int SortOrder { get; set; }
-        [Range(0,2)]
-        [Display(Name = "Track")]
-        public int Path { get; set; }
+        public int SessionId { get; set; }
+        public virtual Session Session { get; set; }
     }
 }

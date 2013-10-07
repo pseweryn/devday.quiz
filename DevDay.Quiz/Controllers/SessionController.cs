@@ -9,21 +9,33 @@ using DevDay.Quiz.Models;
 
 namespace DevDay.Quiz.Controllers
 {
-    public class QuestionsController : Controller
+    public class SessionController : Controller
     {
         private QuizContext db = new QuizContext();
 
         //
-        // GET: /Questions/
+        // GET: /Session/
 
         public ActionResult Index()
         {
-            var questions = db.Questions.Include(q => q.Session);
-            return View(questions.OrderBy(q => q.SortOrder).ToList());
+            return View(db.Sessions.ToList());
         }
 
         //
-        // GET: /Questions/Create
+        // GET: /Session/Details/5
+
+        public ActionResult Details(int id = 0)
+        {
+            Session session = db.Sessions.Find(id);
+            if (session == null)
+            {
+                return HttpNotFound();
+            }
+            return View(session);
+        }
+
+        //
+        // GET: /Session/Create
 
         public ActionResult Create()
         {
@@ -31,73 +43,73 @@ namespace DevDay.Quiz.Controllers
         }
 
         //
-        // POST: /Questions/Create
+        // POST: /Session/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Question question)
+        public ActionResult Create(Session session)
         {
             if (ModelState.IsValid)
             {
-                db.Questions.Add(question);
+                db.Sessions.Add(session);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(question);
+            return View(session);
         }
 
         //
-        // GET: /Questions/Edit/5
+        // GET: /Session/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            Session session = db.Sessions.Find(id);
+            if (session == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(session);
         }
 
         //
-        // POST: /Questions/Edit/5
+        // POST: /Session/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Question question)
+        public ActionResult Edit(Session session)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(question).State = EntityState.Modified;
+                db.Entry(session).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(question);
+            return View(session);
         }
 
         //
-        // GET: /Questions/Delete/5
+        // GET: /Session/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Question question = db.Questions.Find(id);
-            if (question == null)
+            Session session = db.Sessions.Find(id);
+            if (session == null)
             {
                 return HttpNotFound();
             }
-            return View(question);
+            return View(session);
         }
 
         //
-        // POST: /Questions/Delete/5
+        // POST: /Session/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Question question = db.Questions.Find(id);
-            db.Questions.Remove(question);
+            Session session = db.Sessions.Find(id);
+            db.Sessions.Remove(session);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

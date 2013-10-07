@@ -185,6 +185,7 @@
     <Compile Include="Controllers\AnswersController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,6 +194,10 @@
     <Compile Include="Migrations\201308270939494_InitialCreate.Designer.cs">
       <DependentUpon>201308270939494_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310072054047_AddSessions.cs" />
+    <Compile Include="Migrations\201310072054047_AddSessions.Designer.cs">
+      <DependentUpon>201310072054047_AddSessions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -200,6 +205,7 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\QuizContext.cs" />
     <Compile Include="Models\QuizDataViewModel.cs" />
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -270,6 +276,11 @@
     <Content Include="Views\Answers\Create.cshtml" />
     <Content Include="Views\Answers\Edit.cshtml" />
     <Content Include="Views\Answers\Delete.cshtml" />
+    <Content Include="Views\Session\Index.cshtml" />
+    <Content Include="Views\Session\Details.cshtml" />
+    <Content Include="Views\Session\Create.cshtml" />
+    <Content Include="Views\Session\Edit.cshtml" />
+    <Content Include="Views\Session\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -280,6 +291,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201308270939494_InitialCreate.resx">
       <DependentUpon>201308270939494_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310072054047_AddSessions.resx">
+      <DependentUpon>201310072054047_AddSessions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

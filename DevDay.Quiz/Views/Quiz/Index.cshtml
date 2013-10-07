@@ -58,13 +58,14 @@
                     }
 
                     @foreach (var item in qlist)
-                    {                    
+                    {
+                        int trNumber = item.Session.Track;                 
                         string track = null;
                         string qtrackinfo = null;
-                        if (item.Path > 0)
+                        if (trNumber > 0)
                         {
-                            track = "track-content t" + item.Path;
-                            qtrackinfo = "from Track " + item.Path;
+                            track = "track-content t" + trNumber;
+                            qtrackinfo = "from Track " + trNumber;
                         }
                        <div class="@track">
 	                        <div class="question"><b>Question @rowNum @qtrackinfo:</b> @item.Text</div>

@@ -25,9 +25,12 @@
                         <div class="display-label">
                             @Html.DisplayNameFor(i => i.SortOrder) : @item.SortOrder
 	                    </div>
-	                    <div class="display-label">
-	                        @Html.DisplayNameFor(i => i.Path) : @item.Path
-	                    </div>
+                        <div class="display-label">
+                             @Html.DisplayNameFor(model => model.Session.Title) : @item.Session.Title
+                        </div>
+                        <div class="display-field">
+                            @Html.DisplayNameFor(model => model.Session.Speaker) : @item.Session.Speaker
+                        </div>
 	                    <div class="display-field">
                         @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
                         |
