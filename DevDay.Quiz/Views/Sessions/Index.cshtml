@@ -1,51 +1,42 @@
 ﻿@model IEnumerable<DevDay.Quiz.Models.Session>
 
-@{
-    ViewBag.Title = "Index";
-}
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	        
+            @{
+                ViewBag.Title = "Sessions";
+            }
 
-<h2>Index</h2>
+            <h2>Sessions</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Speaker)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Track)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th></th>
-    </tr>
+	        <p>
+	            @Html.ActionLink("Create New", "Create", null, new {@class = "small button"})
+	        </p>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Speaker)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Track)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+            @foreach (var item in Model)
+	        {
+	            <div class="accordion">
+	                <h4 class="radius normal dark-grey-bground">@item.Title</h4>
+	                <div class="acc-content radius grey-bground">
+	                    <div class="display-label">
+	                        @Html.DisplayNameFor(i => i.Speaker) : @item.Speaker
+	                    </div>	                    
+                        <div class="display-label">
+                            @Html.DisplayNameFor(i => i.Track) : @item.Track
+	                    </div>
+                        <div class="display-label">
+                             @Html.DisplayNameFor(model => model.Date) : @item.Date
+                        </div>
+	                    <div class="display-field">
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) 
+                        |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+	                    </div>
+	                </div>
+	            </div>
+            }
 
-</table>
+	    </div>
+	</div>
+</div>

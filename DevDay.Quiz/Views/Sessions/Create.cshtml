@@ -1,58 +1,65 @@
 ﻿@model DevDay.Quiz.Models.Session
 
-@{
-    ViewBag.Title = "Create";
-}
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	    @{
+            ViewBag.Title = "Create Session";
+        }
 
-<h2>Create</h2>
+        <h2>Create</h2>
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Session</legend>
+            <fieldset class="radius grey-bground">
+                <legend>Session</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Title)
-            @Html.ValidationMessageFor(model => model.Title)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Title)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Title, new {@class = "radius"})
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Speaker)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Speaker)
-            @Html.ValidationMessageFor(model => model.Speaker)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Speaker)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.Speaker, new {@class = "radius"})
+                    @Html.ValidationMessageFor(model => model.Speaker)
+                </div>
+                
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Track)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Track)
+                    @Html.ValidationMessageFor(model => model.Track)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Track)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Track)
-            @Html.ValidationMessageFor(model => model.Track)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Date)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Date)
+                    @Html.ValidationMessageFor(model => model.Date)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Date)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Date)
-            @Html.ValidationMessageFor(model => model.Date)
-        </div>
+                <p>
+                    <input type="submit"  class="small button" value="Create" />
+                </p>
+            </fieldset>
+        }
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
-}
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>        
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+	    </div>
+	</div>
 </div>
 
 @section Scripts {

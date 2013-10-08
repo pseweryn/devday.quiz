@@ -1,47 +1,55 @@
 ﻿@model DevDay.Quiz.Models.Session
 
-@{
-    ViewBag.Title = "Delete";
-}
+<div class="row">
+	<div class="large-8 columns">
+	    <div class="large-12 columns">
+	        
+            @{
+                ViewBag.Title = "Delete Session";
+            }
 
-<h2>Delete</h2>
+            <h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Session</legend>
+            <h3>Are you sure you want to delete this?</h3>
+            <fieldset class="radius grey-bground">
+                <legend>Session</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Title)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Title)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Speaker)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Speaker)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Speaker)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Speaker)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Track)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Track)
-    </div>
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Track)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Track)
+                </div>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Date)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Date)
-    </div>
-</fieldset>
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-}
+                <div class="display-label">
+                     @Html.DisplayNameFor(model => model.Date)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Date)
+                </div>
+
+            </fieldset>
+            @using (Html.BeginForm()) {
+                @Html.AntiForgeryToken()
+                <p>
+                    <input type="submit" class="small button" value="Delete" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+            }
+	    </div>
+	</div>
+</div>
