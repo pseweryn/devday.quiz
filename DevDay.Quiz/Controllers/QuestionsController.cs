@@ -27,6 +27,7 @@ namespace DevDay.Quiz.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.SessionId = new SelectList(db.Sessions, "Id", "Text");
             return View();
         }
 
@@ -44,6 +45,7 @@ namespace DevDay.Quiz.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.SessionId = new SelectList(db.Sessions, "Id", "Text", question.SessionId);
             return View(question);
         }
 
@@ -57,6 +59,7 @@ namespace DevDay.Quiz.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.SessionId = new SelectList(db.Sessions, "Id", "Text", question.SessionId);
             return View(question);
         }
 
@@ -73,6 +76,7 @@ namespace DevDay.Quiz.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.SessionId = new SelectList(db.Sessions, "Id", "Text", question.SessionId);
             return View(question);
         }
 

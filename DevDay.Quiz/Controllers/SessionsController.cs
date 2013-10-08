@@ -9,7 +9,7 @@ using DevDay.Quiz.Models;
 
 namespace DevDay.Quiz.Controllers
 {
-    public class SessionController : Controller
+    public class SessionsController : Controller
     {
         private QuizContext db = new QuizContext();
 

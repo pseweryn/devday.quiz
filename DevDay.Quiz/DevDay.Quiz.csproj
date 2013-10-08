@@ -185,7 +185,7 @@
     <Compile Include="Controllers\AnswersController.cs" />
     <Compile Include="Controllers\QuizController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
-    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\SessionsController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -276,11 +276,11 @@
     <Content Include="Views\Answers\Create.cshtml" />
     <Content Include="Views\Answers\Edit.cshtml" />
     <Content Include="Views\Answers\Delete.cshtml" />
-    <Content Include="Views\Session\Index.cshtml" />
-    <Content Include="Views\Session\Details.cshtml" />
-    <Content Include="Views\Session\Create.cshtml" />
-    <Content Include="Views\Session\Edit.cshtml" />
-    <Content Include="Views\Session\Delete.cshtml" />
+    <Content Include="Views\Sessions\Index.cshtml" />
+    <Content Include="Views\Sessions\Details.cshtml" />
+    <Content Include="Views\Sessions\Create.cshtml" />
+    <Content Include="Views\Sessions\Edit.cshtml" />
+    <Content Include="Views\Sessions\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
