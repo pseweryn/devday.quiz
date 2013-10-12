@@ -52,8 +52,16 @@
                     {
                         <div class="track-nav clear-fix">
                             <p class="smallText">Click the tabs to switch to question from another track</p>
-                            <div class="t1"><span class="greenPointer acc-icon"></span><a href="#">&nbsp;</a></div>
-                            <div class="t2"><span class="bluePointer acc-icon"></span><a href="#">&nbsp;</a></div>                      
+                            <div class="t1">
+                                <div class="txt">@qlist.ElementAt(0).Session.Title</div>
+                                <span class="greenPointer acc-icon"></span>
+                                <a href="#">&nbsp;</a>
+                            </div>
+                            <div class="t2">
+                                <div class="txt">@qlist.ElementAt(1).Session.Title</div>
+                                <span class="bluePointer acc-icon"></span>
+                                <a href="#">&nbsp;</a>
+                            </div>                      
                         </div>
                     }
 
@@ -61,14 +69,12 @@
                     {
                         int trNumber = item.Session.Track;                 
                         string track = null;
-                        string qtrackinfo = null;
                         if (trNumber > 0)
                         {
                             track = "track-content t" + trNumber;
-                            qtrackinfo = "from Track " + trNumber;
                         }
                        <div class="@track">
-	                        <div class="question"><b>Question @rowNum @qtrackinfo:</b> @item.Text</div>
+	                        <div class="question"><b>Question @rowNum :</b> @item.Text</div>
 	                            <div class="answers">
 	                                <ul>
 	                                    @foreach (var answer in item.Answers)

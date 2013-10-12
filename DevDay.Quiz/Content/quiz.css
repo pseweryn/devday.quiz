@@ -157,18 +157,29 @@ div.track-nav {
     display: none;
 }
 
-div.track-nav div {
+div.track-nav > div {
     width: 50%;
+    max-height: 36px;
     float: left;
     margin: 10px 0 30px 0;
     cursor: pointer;
     position: relative;
+    padding: 10px;
 }
 div.track-nav .t1 {
     background-color: #74C043;
 }
 div.track-nav .t2 {
     background-color: #007DC0;
+}
+
+div.track-nav .txt {
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    min-height: 20px;
+    width: 100%;
 }
 
 .clear-fix:after {
@@ -277,7 +288,7 @@ nav li a {
 
 .current span {
     position: absolute;
-    top: 15px;
+    top: 35px;
     left: 45%;
     display: inline;
 }
